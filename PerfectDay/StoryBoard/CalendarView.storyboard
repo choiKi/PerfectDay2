@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="SxJ-Dz-2mV">
+            <objects>
+                <viewController storyboardIdentifier="CalendarViewController" id="m1y-FE-Ig2" customClass="ViewController" customModule="PerfectDay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8qM-j5-mA0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ZL-nU-QJN" customClass="FSCalendar">
+                                <rect key="frame" x="20" y="64" width="374" height="398"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jsj-Xz-7zh">
+                                <rect key="frame" x="20" y="472" width="374" height="390"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="JfF-LU-9em">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeN-4g-vv6">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <color key="textColor" systemColor="linkColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nyl-0S-6W2">
+                                                <rect key="frame" x="280" y="0.0" width="94" height="30"/>
+                                                <state key="normal" image="plus" catalog="system"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1SE-0k-BPg">
+                                        <rect key="frame" x="0.0" y="30" width="374" height="360"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="calendarCell" id="r1Z-b7-qCv" customClass="CalendarTableViewCell" customModule="PerfectDay" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="374" height="54.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r1Z-b7-qCv" id="34u-P2-Wtq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="54.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vpn-2m-5hK">
+                                                            <rect key="frame" x="15" y="15" width="344" height="24.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soR-MK-SEg">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="172" height="24.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                    <color key="textColor" systemColor="linkColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wt3-lo-52I">
+                                                                    <rect key="frame" x="172" y="0.0" width="172" height="24.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                    <color key="textColor" systemColor="systemTealColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="vpn-2m-5hK" firstAttribute="leading" secondItem="34u-P2-Wtq" secondAttribute="leading" constant="15" id="Lat-x0-CcC"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vpn-2m-5hK" secondAttribute="trailing" constant="15" id="dfB-FY-y2z"/>
+                                                        <constraint firstItem="vpn-2m-5hK" firstAttribute="top" secondItem="34u-P2-Wtq" secondAttribute="top" constant="15" id="fyH-BM-9aa"/>
+                                                        <constraint firstAttribute="bottom" secondItem="vpn-2m-5hK" secondAttribute="bottom" constant="15" id="pTi-bV-JBw"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pun-ZD-Dmt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pun-ZD-Dmt" firstAttribute="bottom" secondItem="8ZL-nU-QJN" secondAttribute="bottom" constant="400" id="CZR-Gu-2SS"/>
+                            <constraint firstItem="Pun-ZD-Dmt" firstAttribute="bottom" secondItem="Jsj-Xz-7zh" secondAttribute="bottom" id="Ch8-TZ-LoX"/>
+                            <constraint firstItem="Jsj-Xz-7zh" firstAttribute="top" secondItem="8ZL-nU-QJN" secondAttribute="bottom" constant="10" id="Clx-rb-6Qw"/>
+                            <constraint firstItem="8ZL-nU-QJN" firstAttribute="top" secondItem="Pun-ZD-Dmt" secondAttribute="top" constant="20" id="R51-0I-gpx"/>
+                            <constraint firstItem="8ZL-nU-QJN" firstAttribute="leading" secondItem="Pun-ZD-Dmt" secondAttribute="leading" constant="20" id="SBO-D6-RPT"/>
+                            <constraint firstItem="Pun-ZD-Dmt" firstAttribute="trailing" secondItem="Jsj-Xz-7zh" secondAttribute="trailing" constant="20" id="ZeG-qT-nHa"/>
+                            <constraint firstItem="Jsj-Xz-7zh" firstAttribute="leading" secondItem="Pun-ZD-Dmt" secondAttribute="leading" constant="20" id="hnG-PW-tG6"/>
+                            <constraint firstItem="Pun-ZD-Dmt" firstAttribute="trailing" secondItem="8ZL-nU-QJN" secondAttribute="trailing" constant="20" id="sB1-S7-G5T"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calendar" destination="8ZL-nU-QJN" id="Zg3-p8-fO6"/>
+                        <outlet property="tableView" destination="1SE-0k-BPg" id="4Zk-bE-9Ck"/>
+                        <outlet property="todayLabel" destination="AeN-4g-vv6" id="uqO-HX-TNY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFH-37-Cbg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-439" y="-218"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
